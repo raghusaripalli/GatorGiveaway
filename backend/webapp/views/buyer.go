@@ -7,10 +7,12 @@ import (
 	m "webapp/model"
 
 	"github.com/gin-gonic/gin"
+	"github.com/microcosm-cc/bluemonday"
 	"gorm.io/gorm"
 )
 
 var Limit int = 10
+var secure *bluemonday.Policy = bluemonday.StrictPolicy()
 
 type Posts struct {
 	Page       int
@@ -21,7 +23,7 @@ type Posts struct {
 // Reads all posts of all buyers
 func GetPosts(db *gorm.DB) gin.HandlerFunc {
 	fn := func(c *gin.Context) {
-		page := c.DefaultQuery("page", "1")
+		page := secure.Sanitize(c.DefaultQuery("page", "1"))
 		pageNumber, err := strconv.Atoi(page)
 
 		if err != nil {
