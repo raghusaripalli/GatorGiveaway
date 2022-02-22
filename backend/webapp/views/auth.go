@@ -38,7 +38,7 @@ func LoginView(db *gorm.DB) gin.HandlerFunc {
 		password := p.Sanitize(json.Password)
 
 		// DB query to search for username and password and store the results in users
-		db.Find(&users, "username = ? AND password = ?", username, password)
+		db.Find(&users, "(username = ? or email = ?) AND password = ?", username, username, password)
 
 		// if user found return success
 		if len(users) > 0 {
