@@ -1,6 +1,7 @@
 package views
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 	m "webapp/model"
@@ -91,6 +92,12 @@ func RegisterView(db *gorm.DB) gin.HandlerFunc {
 		// return error if the user exists
 		if user != (m.User{}) {
 			c.JSON(http.StatusConflict, gin.H{"error": "Username Already Exists!"})
+			return
+		}
+
+		db.Find(&user, "email = ?", json.Email)
+		if user != (m.User{}) {
+			c.JSON(http.StatusConflict, gin.H{"error": fmt.Sprintf("An User with the email %s exists!", json.Email)})
 			return
 		}
 
