@@ -69,6 +69,7 @@ func main() {
 	r.GET("/read", v.GetPostView(db))
 	r.PATCH("/update/:postId", v.UpdatePostView(db))
 	r.DELETE("/delete/:postId", v.DeletePostView(db))
+	r.GET("/allPosts", v.GetPosts(db))
 
 	// starts server and listens on port 8080
 	r.Run()
