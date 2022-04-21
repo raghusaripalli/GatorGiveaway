@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/GatorGiveaway/static/css/main.91fac9e9.css",
-    "main.js": "/GatorGiveaway/static/js/main.1e46fae6.js",
+    "main.js": "/GatorGiveaway/static/js/main.f44e9c75.js",
     "static/js/787.cda612ba.chunk.js": "/GatorGiveaway/static/js/787.cda612ba.chunk.js",
     "index.html": "/GatorGiveaway/index.html",
     "main.91fac9e9.css.map": "/GatorGiveaway/static/css/main.91fac9e9.css.map",
-    "main.1e46fae6.js.map": "/GatorGiveaway/static/js/main.1e46fae6.js.map",
+    "main.f44e9c75.js.map": "/GatorGiveaway/static/js/main.f44e9c75.js.map",
     "787.cda612ba.chunk.js.map": "/GatorGiveaway/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91fac9e9.css",
-    "static/js/main.1e46fae6.js"
+    "static/js/main.f44e9c75.js"
   ]
 }
